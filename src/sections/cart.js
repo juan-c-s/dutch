@@ -1,6 +1,17 @@
 import { Container, Flex, Stack, Heading, Text, Box, Image, AspectRatio, Button, useColorMode } from "@chakra-ui/react"
-
+import { useState, useEffect } from 'react';
 const Cart = () => {
+    let [precio, setPrecio] = useState("N/A");
+    const getPrice = () => {
+        console.log(precio);
+        setPrecio(1000.0);
+        /**
+         * llamar función del contrato de getPrice
+         */
+    }
+    const buton = () => {
+        getPrice();
+    }
     return (
         <Stack direction='column' // inner elements
             w="full"
@@ -34,20 +45,23 @@ const Cart = () => {
                         <Text fontSize="sm" >PNYCOMP27541</Text>
                     </Stack>
 
-                    <Heading size="sm" textAlign="end">$1000.0</Heading>
+                    <Heading size="sm" textAlign="end">${precio}</Heading>
                 </Stack>
 
             </Stack>
             <Stack direction="column" spacing={4}>
                 <Stack direction="row" spacing={1} w="full" justifyContent="space-between" alignItems="center">
                     <Text size="xs">Subtotal</Text>
-                    <Heading size="xs">$1000</Heading>
+                    <Heading size="xs">${precio}</Heading>
                 </Stack>
 
             </Stack>
             <Stack direction="row" spacing={1} w="full" justifyContent="space-between" alignItems="center">
                 <Text size="xs">Total</Text>
-                <Heading size="lg">$1000.0</Heading>
+                <Heading size="lg">${precio} cUSD</Heading>
+            </Stack>
+            <Stack direction="column">
+                <Button onClick={buton}>getPrice</Button>
             </Stack>
         </Stack >
     )
