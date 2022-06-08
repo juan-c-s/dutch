@@ -4,10 +4,8 @@ const Cart = () => {
     let [precio, setPrecio] = useState("N/A");
     const getPrice = () => {
         console.log(precio);
-        setPrecio(1000.0);
-        /**
-         * llamar función del contrato de getPrice
-         */
+        const retornoGetPriceDelContrato = 1000.0//llamar función getPrice del contrato
+        setPrecio(retornoGetPriceDelContrato);
     }
     const buton = () => {
         getPrice();

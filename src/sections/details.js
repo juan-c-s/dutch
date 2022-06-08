@@ -31,10 +31,6 @@ const Details = () => {
     }
     const bid = async () => {
         console.log(textInput.current.value)
-        /** 
-         * llamar función del contrato de buy()
-        */
-
         console.log(value)
         const transactionParameters = {
             nonce: '0x00', // ignored by MetaMask
@@ -55,6 +51,10 @@ const Details = () => {
             params: [transactionParameters],
         });
         console.log("transaction in address: " + txHash);
+        /** 
+         * llamar función del contrato de buy()
+        */
+
     }
 
     return (
